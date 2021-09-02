@@ -21,23 +21,25 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
+
+}
+.blinkyDancer{
+  border:30px solid pink;
+  border-radius:30px;
+  position:absolute;
+  animation: pulse-dot 1.25s infinite;
 }
 
-.blinkyDancer{
-  border:50px solid pink;
-  border-radius:50px;
-  position:absolute;
-}
 .colorDancer{
   position:absolute;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   background: red;
   -webkit-animation:spin 4s linear infinite;
   -moz-animation:spin 4s linear infinite;
   animation: mymove 5s infinite,spin 5s infinite;
 }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }}
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg) translate(-150px, 0); }}
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes mymove {
@@ -50,7 +52,9 @@ body, a:link, a:visited, a:active{
   height: 50px;
   background-color: rgb(20, 212, 107);
   border-radius: 50px;
-  animation: pulse-dot 1.25s infinite;
+  animation:
+    pulse-dot 1.25s infinite,
+    shift 3s infinite;
 }
 @keyframes pulse-dot {
   0% {
@@ -61,5 +65,16 @@ body, a:link, a:visited, a:active{
   }
   100% {
     transform: scale(.8);
+  }
+}
+@keyframes shift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50px, 0);
+  }
+  80% {
+    transform: translate(-50px, 0);
   }
 }
