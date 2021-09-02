@@ -19,13 +19,4 @@ makeColorDancer.prototype.step = function() {
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
-  this.$node.animate(
-    { deg: 180 },
-    {
-      duration: 1200,
-      step: function(now) {
-        $(this).css({ transform: 'rotate(' + now + 'deg)' });
-      }
-    }
-  );
 };
