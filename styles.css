@@ -25,3 +25,9 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.colorDancer{
+  border:10px solid yellow;
+  border-radius:0;
+  position:absolute;
+}
