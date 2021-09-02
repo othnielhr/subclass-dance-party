@@ -18,7 +18,12 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 makeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
-  setTimeout(makeDancer.prototype.step, this.timeBetweenSteps);
+
+  var context = this;
+  const callback = function() {
+    context.step();
+  };
+  setTimeout(callback, this.timeBetweenSteps);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
