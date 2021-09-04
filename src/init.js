@@ -32,8 +32,18 @@ $(document).ready(function() {
   });
 
   $('#MyButton').on('click', function(event) {
-    for (var dancer = 0; dancer < window.dancers.length - 1; dancer++) {
-      windows.dancers[dancer].lineUp();
+    var neg = $('body').width() / 2;
+    var pos = $('body').width() / 2;
+    for (var dancer = 0; dancer < window.dancers.length; dancer++) {
+      if (dancer === 0) {
+        window.dancers[dancer].lineUp(pos);
+      } else if (dancer % 2 === 1) {
+        pos += 100;
+        window.dancers[dancer].lineUp(pos);
+      } else if (dancer % 2 === 0) {
+        neg -= 100;
+        window.dancers[dancer].lineUp(neg);
+      }
     }
   });
 

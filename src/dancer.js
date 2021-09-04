@@ -19,11 +19,11 @@ makeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
 
-  var context = this;
-  const callback = function() {
-    context.step();
-  };
-  setTimeout(callback, this.timeBetweenSteps);
+  // var context = this;
+  // const callback = function() {
+  //   context.step();
+  // };
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -37,6 +37,7 @@ makeDancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
-makeDancer.prototype.lineUp = function() {
-  this.setPosition(500, this.left);
+makeDancer.prototype.lineUp = function(point) {
+  var midscreen = $('body').height() / 2;
+  this.setPosition(midscreen, point);
 };
