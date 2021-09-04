@@ -5,6 +5,10 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url("dancefloor.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -54,7 +58,7 @@ body, a:link, a:visited, a:active{
   border-radius: 50px;
   animation:
     pulse-dot 1.25s infinite,
-    shift 3s infinite;
+    shift 0.75s infinite;
 }
 @keyframes pulse-dot {
   0% {
@@ -72,9 +76,6 @@ body, a:link, a:visited, a:active{
     transform: translate(0, 0);
   }
   50% {
-    transform: translate(50px, 0);
-  }
-  80% {
-    transform: translate(-50px, 0);
+    transform: translate(25px, 0);
   }
 }
