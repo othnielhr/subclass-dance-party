@@ -47,4 +47,20 @@ $(document).ready(function() {
     }
   });
 
+  $('#PairUp').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i += 2) {
+      var x = (window.dancers[i].left + window.dancers[i + 1].left) / 2;
+      var y = (window.dancers[i].top + window.dancers[i + 1].top) / 2;
+      window.dancers[i].setPosition(x, y + 300);
+      window.dancers[i + 1].setPosition(x + 45, y + 300);
+    }
+  });
+
+  $('#OriginalPos').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i ++) {
+      window.dancers[i].setPosition(window.dancers[i].top, window.dancers[i].left);
+    }
+  });
+
+
 });
