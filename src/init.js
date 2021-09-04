@@ -23,8 +23,8 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      ($('body').height() * Math.random()),
-      $('body').width() * Math.random(),
+      (($('body').height() - 150) * Math.random()), //accomodate for animations
+      ($('body').width() - 150) * Math.random(), //moving off screen
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
@@ -69,6 +69,4 @@ $(document).ready(function() {
   $(document).on('mouseout', '.dancer', function(event) {
     $(this).css('background-color', 'rgb(20, 212, 107)');
   });
-
-
 });
