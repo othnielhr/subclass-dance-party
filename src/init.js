@@ -62,5 +62,13 @@ $(document).ready(function() {
     }
   });
 
+  $(document).on('mouseover', '.dancer', function(event) {
+    $(this).css('background-color', 'yellow');
+  });
+
+  $(document).on('mouseout', '.dancer', function(event) {
+    $(this).css('background-color', 'rgb(20, 212, 107)');
+  });
+
 
 });
